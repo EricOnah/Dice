@@ -72,7 +72,7 @@ body {
   font-family: "BabyScript";
   color: #97be5a;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .container-main {
@@ -109,4 +109,41 @@ body {
   display: flex;
   padding: 10px;
   justify-content: space-around;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.btn {
+  font-family: "BabyScript";
+  padding: 5px 60px;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  background-color: #97be5a;
+}
+
+@media (max-width: 600px) {
+  .score-update__text {
+    font-size: 2.8rem;
+  }
+
+  .score-update__img {
+    width: 50px;
+  }
+  .dice {
+    width: 150px;
+    height: 150px;
+  }
+  .circle-p1,
+  .circle-p2 {
+    width: 25px;
+    height: 25px;
+  }
 }

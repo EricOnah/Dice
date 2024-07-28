@@ -1,0 +1,22 @@
+/* Three dice */
+.circle-p1__two,
+.circle-p1__five {
+  background-color: #c40c0c;
+}
+
+/* Two */
+.circle-p1__two,
+.circle-p1__three,
+.circle-p1__five {
+  background-color: #c40c0c;
+}
+
+/* One */
+
+.circle-p1 {
+  background-color: #c40c0c;
+}
+
+.circle-p1__three {
+  background-color: #fff;
+}
