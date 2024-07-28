@@ -122,11 +122,18 @@ body {
 .btn {
   font-family: "BabyScript";
   padding: 5px 60px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   border-radius: 25px;
   border: none;
   color: #fff;
   background-color: #97be5a;
+  transition: font-size 0.2s ease-in-out 0.1s, box-shadow 0.2s ease-in-out 0.1s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 2px 5px 10px #888888;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 600px) {
@@ -145,5 +152,9 @@ body {
   .circle-p2 {
     width: 25px;
     height: 25px;
+  }
+  .btn:hover {
+    box-shadow: none;
+    font-size: 1.2rem;
   }
 }
