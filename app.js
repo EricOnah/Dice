@@ -100,9 +100,8 @@ btn.addEventListener("click", () => {
   if (p1Score < p2Score) {
     scoreUpdate.innerHTML = "Player 2 wins";
   } else if (p1Score == p2Score) {
-    scoreUpdate.innerHTML = "Draw! Play again";
+    scoreUpdate.innerHTML = "Draw!";
   } else {
     scoreUpdate.innerHTML = "Player 1 wins";
   }
-  console.log(p1Score, p2Score);
 });
