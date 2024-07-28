@@ -47,7 +47,7 @@ body {
 }
 
 #dice {
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
 .container-dice {
   display: flex;
@@ -100,7 +100,12 @@ body {
   padding: 10px;
   justify-content: space-around;
 }
-.mid {
+.mid-two {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+.mid-one {
   display: flex;
   padding: 10px;
   justify-content: space-around;
@@ -133,9 +138,18 @@ body {
 .btn:hover {
   cursor: pointer;
   box-shadow: 2px 5px 10px #888888;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+}
+.white {
+  background-color: #fff;
+}
+.red {
+  background-color: #c40c0c;
 }
 
+.hidden {
+  display: none;
+}
 @media (max-width: 600px) {
   .score-update__text {
     font-size: 2.8rem;
