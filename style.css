@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./fonts/Auttan.ttf") format("woff2"),
+    url("./fonts/Auttan.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BabyScript";
+  src: url("./fonts/Baby\ Script.ttf") format("woff2"),
+    url("./fonts/Baby\ Script.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #45474b;
+}
+
+.score-update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  gap: 20px;
+}
+
+.score-update__img {
+  width: 6rem;
+}
+
+.score-update__text {
+  font-family: "BabyScript";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 5rem;
+  letter-spacing: 0.3rem;
+  text-shadow: 3px 3px 5px #888888;
+  color: #97be5a;
+}
+
+#dice {
+  padding-top: 8rem;
+}
+.container-dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dice {
+  width: 200px;
+  height: 200px;
+  background-color: #c40c0c;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.dice__player-id {
+  font-family: "BabyScript";
+  color: #97be5a;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.circle-p1 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.circle-p2 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.top {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+.mid {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+.bottom {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+/* Three dice */
+.circle-p1__two,
+.circle-p1__five {
+  background-color: #c40c0c;
+}
+
+/* Two */
+.circle-p1__two,
+.circle-p1__three,
+.circle-p1__five {
+  background-color: #c40c0c;
+}
+
+/* One */
+
+.circle-p1 {
+  background-color: #c40c0c;
+}
+
+.circle-p1__three {
+  background-color: #fff;
+}

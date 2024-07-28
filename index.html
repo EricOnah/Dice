@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="score-update">
+            <img src="./image/red-flag.png" alt="" class="score-update__img">
+            <h1 class="score-update__text">Player <span class="Player-id">1</span> wins</h1>
+        </div>
+    </div>
+
+
+    <section id="dice">
+        <div class="container-main">
+            <div class="container container-dice">
+                <div class="dice__player-id">Player 1</div>
+                <div class="dice">
+                    <div class="top">
+                        <div class="circle-p1 circle-p1__one"></div>
+                        <div class="circle-p1 circle-p1__two"></div>
+                    </div>
+                    <div class="mid">
+                        <div class="circle-p1 circle-p1__three"></div>
+                        <!-- <div class="circle-p1 circle-p1__four"></div> -->
+                    </div>
+                    <div class="bottom">
+                        <div class="circle-p1 circle-p1__five"></div>
+                        <div class="circle-p1 circle-p1__six"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container container-dice">
+                <div class="dice__player-id">Player 2</div>
+                <div class="dice">
+                    <div class="top">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="mid">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="bottom">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
