@@ -6,6 +6,7 @@ let circleP2Three = document.querySelector(".circle-p2__three");
 let midOne = document.querySelector(".mid-one");
 let midTwo = document.querySelector(".mid-two");
 let scoreUpdate = document.querySelector(".score-update__text");
+
 function reset() {
   for (let i = 0; i < circleOne.length; i++) {
     circleOne[i].classList.remove("red", "hidden");
