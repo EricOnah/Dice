@@ -7,102 +7,91 @@ let midOne = document.querySelector(".mid-one");
 let midTwo = document.querySelector(".mid-two");
 let scoreUpdate = document.querySelector(".score-update__text");
 
+let dice = [circleOne, circleTwo];
+
+// Reset
+
 function reset() {
-  for (let i = 0; i < circleOne.length; i++) {
-    circleOne[i].classList.remove("red", "hidden");
-    circleTwo[i].classList.remove("red", "hidden");
-    btn.innerHTML = "Play";
-  }
+  dice.forEach((die) => {
+    die.forEach((e) => removeClass(e));
+  });
+  btn.innerHTML = "Play";
 }
 
-let p1 = function () {
-  let randomNum = Math.floor(Math.random() * 6) + 1;
+// Remove class
+function removeClass(element) {
+  element.classList.remove("red", "hidden");
+}
 
-  if (randomNum === 1) {
-    circleThree.classList.add("red", "hidden");
-    for (let i = 0; i < circleOne.length; i++) {
-      if (i !== 3) {
-        circleOne[i].classList.add("red");
-      }
-    }
-  } else if (randomNum === 2) {
-    for (let i = 0; i < circleOne.length; i++) {
-      if (i !== 0 && i !== 5) {
-        circleOne[i].classList.add("red");
-      }
-    }
-  } else if (randomNum === 3) {
-    for (let i = 0; i < circleOne.length; i++) {
-      if (i !== 0 && i !== 5) {
+// ***************************** Dice function //
+
+function player(die, circle, mid) {
+  let randomNum = Math.floor(Math.random() * 6) + 1;
+  switch (randomNum) {
+    case 1:
+      circle.classList.add("red", "hidden");
+      for (let i = 0; i < die.length; i++) {
         if (i !== 3) {
-          circleOne[i].classList.add("red");
+          die[i].classList.add("red");
         }
       }
-    }
-    circleThree.classList.add("hidden");
-  } else if (randomNum === 4) {
-    let children = midOne.children;
-    for (let i = 0; i < children.length; i++) {
-      children[i].classList.add("red");
-    }
-  } else if (randomNum === 5) {
-    circleThree.classList.add("red", "hidden");
-  } else if (randomNum === 6) {
-    for (let i = 0; i < circleOne.length; i++) {
-      circleOne[i].classList.remove("red", "hidden");
-    }
-  }
-  return randomNum;
-};
+      break;
 
-let p2 = function () {
-  let randomNum = Math.floor(Math.random() * 6) + 1;
-
-  if (randomNum === 1) {
-    circleP2Three.classList.add("red", "hidden");
-    for (let i = 0; i < circleTwo.length; i++) {
-      if (i !== 3) {
-        circleTwo[i].classList.add("red");
-      }
-    }
-  } else if (randomNum === 2) {
-    for (let i = 0; i < circleTwo.length; i++) {
-      if (i !== 0 && i !== 5) {
-        circleTwo[i].classList.add("red");
-      }
-    }
-  } else if (randomNum === 3) {
-    for (let i = 0; i < circleTwo.length; i++) {
-      if (i !== 0 && i !== 5) {
-        if (i !== 3) {
-          circleTwo[i].classList.add("red");
+    case 2:
+      for (let i = 0; i < die.length; i++) {
+        if (i !== 0 && i !== 5) {
+          die[i].classList.add("red");
         }
       }
-    }
-    circleP2Three.classList.add("hidden");
-  } else if (randomNum === 4) {
-    let children = midTwo.children;
-    for (let i = 0; i < children.length; i++) {
-      children[i].classList.add("red");
-    }
-  } else if (randomNum === 5) {
-    circleP2Three.classList.add("red", "hidden");
-  } else if (randomNum === 6) {
-    for (let i = 0; i < circleTwo.length; i++) {
-      circleTwo[i].classList.remove("red", "hidden");
-    }
+      break;
+
+    case 3:
+      for (let i = 0; i < die.length; i++) {
+        if (i !== 0 && i !== 5) {
+          if (i !== 3) {
+            die[i].classList.add("red");
+          }
+        }
+      }
+      circle.classList.add("hidden");
+      break;
+    case 4:
+      let children = mid.children;
+      for (let i = 0; i < children.length; i++) {
+        children[i].classList.add("red");
+      }
+      break;
+
+    case 5:
+      circle.classList.add("red", "hidden");
+      break;
+
+    case 6:
+      for (let i = 0; i < die.length; i++) {
+        die[i].classList.remove("red", "hidden");
+      }
+      break;
   }
   return randomNum;
-};
+}
+
+function p1() {
+  return player(circleOne, circleThree, midOne);
+}
+
+function p2() {
+  return player(circleTwo, circleP2Three, midTwo);
+}
+
 btn.addEventListener("click", () => {
   reset();
   let p1Score = p1();
   let p2Score = p2();
-  if (p1Score < p2Score) {
-    scoreUpdate.innerHTML = "Player 2 wins";
-  } else if (p1Score == p2Score) {
-    scoreUpdate.innerHTML = "Draw!";
+  if (p1Score > p2Score) {
+    scoreUpdate.textContent = "Player 1 wins";
+  } else if (p1Score < p2Score) {
+    scoreUpdate.textContent = "Player 2 wins";
   } else {
-    scoreUpdate.innerHTML = "Player 1 wins";
+    scoreUpdate.textContent = "It's a tie!";
   }
 });
