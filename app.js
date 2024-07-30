@@ -13,14 +13,14 @@ let dice = [circleOne, circleTwo];
 
 function reset() {
   dice.forEach((die) => {
-    die.forEach((e) => removeClass(e));
+    die.forEach((e) => removeClass(e, "red", "hidden"));
   });
   btn.innerHTML = "Play";
 }
 
 // Remove class
-function removeClass(element) {
-  element.classList.remove("red", "hidden");
+function removeClass(elements, ...classes) {
+  elements.classList.remove(...classes);
 }
 
 // ***************************** Dice function //
@@ -87,11 +87,10 @@ btn.addEventListener("click", () => {
   reset();
   let p1Score = p1();
   let p2Score = p2();
-  if (p1Score > p2Score) {
-    scoreUpdate.textContent = "Player 1 wins";
-  } else if (p1Score < p2Score) {
-    scoreUpdate.textContent = "Player 2 wins";
-  } else {
-    scoreUpdate.textContent = "It's a tie!";
-  }
+  scoreUpdate.textContent =
+    p1Score > p2Score
+      ? "Player 1 wins"
+      : p1Score < p2Score
+      ? "Player 2 wins"
+      : "It's a tie!";
 });
