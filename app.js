@@ -75,13 +75,8 @@ function player(die, circle, mid) {
   return randomNum;
 }
 
-function p1() {
-  return player(circleOne, circleThree, midOne);
-}
-
-function p2() {
-  return player(circleTwo, circleP2Three, midTwo);
-}
+const p1 = () => player(circleOne, circleThree, midOne);
+const p2 = () => player(circleTwo, circleP2Three, midTwo);
 
 btn.addEventListener("click", () => {
   reset();
